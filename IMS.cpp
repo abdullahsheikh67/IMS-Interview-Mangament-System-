@@ -2,10 +2,7 @@
 #include <fstream>
 #include <string>
 using namespace std;
-
-// ----------------------------------------------------
 // Candidate Structure
-// ----------------------------------------------------
 struct Candidate {
     string name;
     string username;
@@ -14,13 +11,10 @@ struct Candidate {
     int experience;
     float cgpa;
     float priorityScore;
-    string status;              // Waiting / Selected / Rejected
+    string status;// Waiting / Selected / Rejected
     Candidate* next;
 };
-
-// ----------------------------------------------------
 // Priority Queue (Linked List)
-// ----------------------------------------------------
 class PriorityQueue {
 private:
     Candidate* head;
@@ -125,13 +119,8 @@ public:
         }
     }
 };
-
-// ----------------------------------------------------
 PriorityQueue pq;
-
-// ----------------------------------------------------
 // Interviewer Authentication
-// ----------------------------------------------------
 bool interviewerLogin() {
     string id, pass;
     cout << "\n--- Interviewer Login ---\n";
@@ -154,10 +143,7 @@ bool interviewerLogin() {
     cout << "Invalid Interviewer ID or Password.\n";
     return false;
 }
-
-// ----------------------------------------------------
 // Candidate Signup
-// ----------------------------------------------------
 void candidateSignup() {
     string name, qualification, username, password;
     int exp;
@@ -186,9 +172,7 @@ void candidateSignup() {
     cout << "\nSignup successful.\n";
 }
 
-// ----------------------------------------------------
 // Candidate Login
-// ----------------------------------------------------
 void candidateLogin() {
     string username, password;
     cout << "\n--- Candidate Login ---\n";
@@ -213,10 +197,7 @@ void candidateLogin() {
     }
     cout << "Invalid credentials.\n";
 }
-
-// ----------------------------------------------------
 // Interviewer Portal
-// ----------------------------------------------------
 void interviewerPortal() {
     int choice;
     do {
@@ -262,10 +243,7 @@ void interviewerPortal() {
         }
     } while (choice != 0);
 }
-
-// ----------------------------------------------------
 // Main Menu
-// ----------------------------------------------------
 void loginMenu() {
     int choice;
     do {
@@ -288,9 +266,9 @@ void loginMenu() {
     } while (choice != 0);
 }
 
-// ----------------------------------------------------
 int main() {
     pq.loadFromFile();
     loginMenu();
     return 0;
 }
+
